@@ -4,6 +4,7 @@ from tkinter import *
 from turtle import title
 from tkinter import ttk
 import webbrowser
+from winsound import PlaySound
 import vlc
 import os
 import time
@@ -49,14 +50,13 @@ def DrawingMenu():
     top1.geometry('800x400')
     top1.resizable(FALSE, FALSE)
     top1.configure(bg='')
-    buttonUrl = Button(top1, text="Play", command=playSound).pack()
-    #buttonUr2 = Button(top1, text="Pause", command=player.pause()).pack()
+    buttonUrl = Button(top1, text="Play", command=Play).pack()
+    buttonUr2 = Button(top1, text="Stop", command=stop).pack()
     #buttonUrl = Button(top1, text="Play", command=playSound).pack()
 
 
 def playSound():
 
-    global playSound
     url = 'https://www.youtube.com/watch?v=Qs-8xYwYJAQ&list=PLMItTFx19QcH1YUvkdV1q1ZnK9NaQBYqk'
     
     song = pafy.new(url)
@@ -73,9 +73,11 @@ def playSound():
     media = instance.media_new(play_url)
     media.get_mrl()
     player.set_media(media)
-    player.play()
-    #player.pause()
-
+    
+    Play = player.play()
+    Stop = player.stop()
+    
+        
     #time.sleep(duration)
 
 
