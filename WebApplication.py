@@ -31,7 +31,6 @@ root['menu'] = m
 m_edit.add_command(label="Youtube", command=webv)
 m_edit.add_command(label="Twitch", command=print('http://www.twitch.com'))
 m_edit.add_command(label="Steam", command=print('http://www.Steam.com'))
-m_edit.add_command(label="Pornhub", command=print('http://www.pornhub.com'))
 m_edit.add_command(label="Radio-Stations", command=print('http://streema.com/ , https://www.iheart.com/'))
 m_edit.add_command(label="Exit", command=quit)
 root.mainloop()
